@@ -12,7 +12,7 @@ typedef struct fila {
     int capacidade;
 }fila_t;
 
-fila_t* cria_fila(int capacidade) {
+fila_t* criar_fila(int capacidade) {
 
     fila_t* fila = (fila_t*) malloc(sizeof(fila_t));
     fila->elementos = malloc(sizeof(int) * capacidade);
@@ -24,7 +24,7 @@ fila_t* cria_fila(int capacidade) {
     return fila;
 }
 
-int destruir_fila_fila(fila_t* fila) {
+int destruir_fila(fila_t* fila) {
 
     free(fila->elementos);
     free(fila);
@@ -32,6 +32,8 @@ int destruir_fila_fila(fila_t* fila) {
 
 }
 void enfileirar(fila_t* fila, int valor) {
+
+    if (fila->tamanho >= fila->capacidade) exit(EXIT_FAILURE);
 
     fila->elementos[fila->fim] = valor;
     fila->fim = (fila->fim + 1) % fila->capacidade;
