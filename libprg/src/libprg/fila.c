@@ -39,9 +39,42 @@ void enfileirar(fila_t* fila, int valor) {
     fila->fim = (fila->fim + 1) % fila->capacidade;
     fila->tamanho++;
 }
-// desenfileirar
-// inicio
-// fim
-// vazia
-// cheia
+
+int desenfileirar (fila_t* fila) {
+
+    if (fila->fim < 0) {
+        exit(EXIT_FAILURE);
+    }
+    int valor = fila->elementos[0];
+
+    for (int i = 1; i < fila->fim; i++) {
+        fila->elementos[i] = fila->elementos[i + 1];
+    }
+    fila->fim--;
+
+    return valor;
+}
+
+int fila_vazia(fila_t* fila) {
+    return (fila->tamanho == 0);
+}
+
+int inicio_fila(fila_t* fila) {
+    if (fila_vazia(fila)) {
+        exit(EXIT_FAILURE);
+    }
+    return fila->elementos[0];
+}
+
+int fim_fila(fila_t* fila) {
+    if (fila_vazia(fila)) {
+        exit(EXIT_FAILURE);
+    }
+    int ultimo = (fila->fim - 1 + fila->capacidade) % fila->capacidade;
+
+    return fila->elementos[ultimo];
+}
+int cheia(fila_t* fila) {
+    return (fila->tamanho == fila->capacidade);
+}
 
