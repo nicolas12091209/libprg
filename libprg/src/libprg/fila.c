@@ -19,7 +19,7 @@ struct Fila {
 
 Fila *fila;
 
-Fila *cria_fila(int tamanho) {
+Fila *criar_fila() {
     Fila *fila = malloc(sizeof(Fila));
 
     fila->inicio = NULL;
