@@ -82,7 +82,7 @@ int fim_fila(Fila *fila) {
     return fila->ultimo->valor;
 }
 
-int tam_fila(Fila *fila) {
+int tamanho_fila(Fila *fila) {
     return fila->tamanho;
 }
 
