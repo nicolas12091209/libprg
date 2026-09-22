@@ -10,6 +10,8 @@ set(HEADERS
 set(SOURCES
         src/include/libprg/libprg.h
         src/libprg/fila.c
+        src/libprg/pilha.c
+        src/libprg/lista.c
 )
 
 add_library(libprg ${SOURCES})

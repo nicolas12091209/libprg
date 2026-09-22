@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <libprg/libprg.h>
 
+//FILA//
 typedef struct No {
     int valor;
     struct No *prox;
@@ -109,6 +110,7 @@ void destruir_fila(Fila *fila) {
     free(fila);
 }
 
+//EXERCICIOS_FILA//
 void ex_1_fila() {
     printf("Exercício 1 - Fila implementada.\n");
 }
@@ -136,7 +138,7 @@ void ex_3_fila() {
 
 void ex_4_fila() {
     printf("Fim da fila: %d\n", fim_fila(fila));
-    printf("Tamanho da fila: %d\n", tam_fila(fila));
+    printf("Tamanho da fila: %d\n", tamanho_fila(fila));
 }
 
 void ex_5_fila() {
@@ -158,5 +160,4 @@ void ex_7_fila() {
 
     printf("Fila destruida.\n");
 }
-
 
