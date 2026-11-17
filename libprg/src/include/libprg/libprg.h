@@ -56,6 +56,31 @@ int remover_lista(Lista *lista, int dado);
 int busca_lista(Lista *lista, int dado);
 void imprime_lista(Lista *lista);
 
+typedef struct NoListaDupla {
+    int dado;
+    struct NoListaDupla *anterior;
+    struct NoListaDupla *proximo;
+
+} NoListaDupla;
+
+typedef struct {
+    NoListaDupla *inicio;
+    NoListaDupla *fim;
+    int tamanho;
+
+} ListaDupla;
+
+void criar_lista_dupla(ListaDupla *lista);
+int inserir_inicio_dupla(ListaDupla *lista, int dado);
+int inserir_fim_dupla(ListaDupla *lista, int dado);
+int remover_inicio_dupla(ListaDupla *lista);
+int remover_fim_dupla(ListaDupla *lista);
+int remover_dupla(ListaDupla *lista, int dado);
+int buscar_dupla(ListaDupla *lista, int dado);
+void imprimir_dupla(ListaDupla *lista);
+void imprimir_dupla_reversa(ListaDupla *lista);
+void destruir_lista_dupla(ListaDupla *lista);
+
 
 
 #endif //LABORATORIO_LIBPRG_H
