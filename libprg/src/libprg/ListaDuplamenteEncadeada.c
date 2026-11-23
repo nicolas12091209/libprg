@@ -16,7 +16,7 @@ int inserir_inicio_dupla(ListaDupla *lista, int dado) {
     novo->anterior = NULL;
     novo->proximo = lista->inicio;
     if (lista->inicio == NULL) {
-        lista->fim = novo;              // lista vazia: o novo também é o fim
+        lista->fim = novo;
     } else {
         lista->inicio->anterior = novo;
     }

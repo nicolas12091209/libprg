@@ -82,5 +82,45 @@ void imprimir_dupla_reversa(ListaDupla *lista);
 void destruir_lista_dupla(ListaDupla *lista);
 
 
+#define TAM_CHAVE_ABP 100
+
+typedef struct NoABP {
+    char chave[TAM_CHAVE_ABP];
+    void *dado;
+    struct NoABP *esquerda;
+    struct NoABP *direita;
+} NoABP;
+
+typedef struct {
+    NoABP *raiz;
+    int tamanho;
+} ABP;
+
+void criar_abp(ABP *arvore);
+int inserir_abp(ABP *arvore, const char *chave, void *dado);
+void *buscar_abp(ABP *arvore, const char *chave);
+int remover_abp(ABP *arvore, const char *chave, void *dado);
+void em_ordem_abp(ABP *arvore, void (*visitar)(void *dado));
+int altura_abp(ABP *arvore);
+void destruir_abp(ABP *arvore);
+
+typedef struct NoAVL {
+    int valor;
+    void *dado;
+    int altura;
+    struct NoAVL *esquerda;
+    struct NoAVL *direita;
+} NoAVL;
+
+NoAVL *inserir_avl(NoAVL *no, int valor, void *dado);
+NoAVL *remover_avl(NoAVL *no, int valor);
+void *buscar_avl(NoAVL *no, int valor);
+void percorrer_avl(NoAVL *no, void (*visitar)(void *dado));
+void imprimir_ordem(NoAVL *no);
+void imprimir_avl(NoAVL *no, int nivel);
+int altura_avl(NoAVL *no);
+int tamanho_avl(NoAVL *no);
+void destruir_avl(NoAVL *no);
+
 
 #endif //LABORATORIO_LIBPRG_H
